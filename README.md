@@ -35,6 +35,10 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 
 - git commit -m "메세지"
 
+#### 마지막 커밋에 작업 추가하기
+
+- git commit --amend (--no-edit)
+
 #### 파일 넣기
 
 - git push origin <브랜치>
@@ -59,6 +63,10 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 #### 브랜치 이동
 
 - git checkout <브랜치>
+
+#### oldest-commit부터 lastest-commit까지의 모든 커밋을 현재 브랜치에 복사
+
+- git cherry-pick oldest-commit^..latest-commit
   <br><br>
 
 ---
@@ -92,25 +100,17 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 
 - rm -r .git
 
-#### add 취소
+#### commit 취소하고 unstaged구역에 선택한 HEAD부터 현재 작업내역 저장
 
-- git reset HEAD
+- git reset HEAD^
 
-#### 작업(commit) 취소
+#### commit 취소하고 staged구역에 선택한 HEAD부터 현재 작업내역 저장
 
 - git reset --soft HEAD^
 
-#### commit 취소
+#### commit 취소하고 선택한 HEAD까지 변경사항도 삭제
 
-- git reset --hard @^
-
-#### 병합 취소
-
-- git reset --merge ORIG_HEAD
-
-#### pull 취소
-
-- git reset --hard ORIG_HEAD
+- git reset --hard HEAD^
 
 <br>
 
@@ -121,5 +121,7 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 > hard : 인덱스와 워킹트리 변화를 모두 제거하고 HEAD를 변경
 
 > @: 1.8.4부터 도입된 HEAD의 동의어<br>같은걸로는 @^, @~1, @~ 가 동일
+
+> ^: 한 단계 이전 / ~n: n번 이전
 
 > ORIG_HEAD: 하는 것은 이전에 작업한 곳의 HEAD
