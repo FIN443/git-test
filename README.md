@@ -15,33 +15,38 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 
 ## Initiation
 
-#### 기존 소스 코드 다운로드/복제
+#### 원격 저장소 클론 로컬로 복사
 
-- git clone <주소>
+- git clone <주소> (폴더 이름)
 
-#### 프로젝트 폴더 내에서
+#### 프로젝트 폴더 git 등록
 
 - git init
 
-#### 클라우드 주소 등록 및 발행
+#### git 원격 저장소 목록
+
+- git remote -v
+
+#### git 원격 저장소 추가
 
 - git remote add origin <주소>
+- git remote add <이름> <주소>
 
-#### 파일 등록
+#### unstage 파일 stage 등록
 
-- git add
+- git add <파일>
 
-#### 파일 커밋
+#### stage 파일 commit
 
 - git commit -m "메세지"
 
-#### 마지막 커밋에 작업 추가하기
+#### 마지막 commit에 작업 추가하고 다시 commit
 
 - git commit --amend (--no-edit)
 
-#### 파일 넣기
+#### 원격 저장소에 작업 파일 저장
 
-- git push origin <브랜치>
+- git push (-f) origin <브랜치>
   <br><br>
 
 ---
@@ -59,6 +64,10 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 #### 브랜치 생성&이동
 
 - git checkout -b <브랜치>
+
+#### 브랜치 삭제
+
+- git checkout -d <브랜치>
 
 #### 브랜치 이동
 
@@ -85,7 +94,7 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 
 #### 클라우드에서 git프로젝트의 현 상태 확인
 
-- git fetch origin
+- git fetch <주소> <브랜치>
 
 #### 클라우드의 내용 가져오고 병합(fetch+merge)
 
@@ -99,6 +108,14 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 #### git init 해제
 
 - rm -r .git
+
+#### git 원격 저장소 삭제
+
+- git remote remove <이름>
+
+#### stage 파일 stage 해제
+
+- git rm (-r) <파일> (--cached)
 
 #### commit 취소하고 unstaged구역에 선택한 HEAD부터 현재 작업내역 저장
 
@@ -120,8 +137,10 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 
 > hard : 인덱스와 워킹트리 변화를 모두 제거하고 HEAD를 변경
 
-> @: 1.8.4부터 도입된 HEAD의 동의어<br>같은걸로는 @^, @~1, @~ 가 동일
+> @: 1.8.4부터 도입된 HEAD의 동의어
 
-> ^: 한 단계 이전 / ~n: n번 이전
+> ^: 한 단계 이전
+
+> ~n: n번 이전
 
 > ORIG_HEAD: 하는 것은 이전에 작업한 곳의 HEAD
