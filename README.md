@@ -1,7 +1,9 @@
 # git-test
 
+
 How to settings git, init, cloning, add, commit, remove, branch, reset, and update sub branch from master branch
 <br>
+성지순례
 
 ---
 
