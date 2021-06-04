@@ -32,6 +32,14 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 - git remote add origin <주소>
 - git remote add <이름> <주소>
 
+#### git 원격 저장소 URL 변경
+
+- git remote set-url <이름> <주소>
+
+#### git 원격 저장소 삭제
+
+- git remote remove <이름>
+
 #### unstage 파일 stage 등록
 
 - git add <파일>
