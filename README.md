@@ -69,17 +69,17 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 
 - git branch <이름>
 
-#### 브랜치 생성&이동
-
-- git checkout -b <브랜치>
-
 #### 브랜치 삭제
 
-- git checkout -d <브랜치>
+- git branch -d <브랜치>
 
 #### 브랜치 이동
 
 - git checkout <브랜치>
+
+#### 브랜치 생성&이동
+
+- git checkout -b <브랜치>
 
 #### oldest-commit부터 lastest-commit까지의 모든 커밋을 현재 브랜치에 복사
 
