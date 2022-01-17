@@ -40,22 +40,25 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 
 - git remote remove <이름>
 
-#### unstage 파일 stage 등록
+#### unstage 파일 stage 변경
 
 - git add <파일>
+
+#### stage 파일 unstage 변경
+
+- git reset HEAD <파일>
 
 #### stage 파일 commit
 
 - git commit -m "메세지"
 
-#### 마지막 commit에 작업 추가하고 다시 commit
-
-- git commit --amend (--no-edit)
+#### 마지막 commit 내용 변경
+- git commit --amend "메세지" (or --no-edit)
 
 #### 원격 저장소에 작업 파일 저장
 
-- git push (-f) origin <브랜치>
-  <br><br>
+- git push (-f) <remote> <branch>
+<br><br>
 
 ---
 
@@ -84,7 +87,7 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 #### oldest-commit부터 lastest-commit까지의 모든 커밋을 현재 브랜치에 복사
 
 - git cherry-pick oldest-commit^..latest-commit
-  <br><br>
+<br><br>
 
 ---
 
@@ -120,10 +123,6 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 #### git 원격 저장소 삭제
 
 - git remote remove <이름>
-
-#### stage 파일 stage 해제
-
-- git rm (-r) <파일> (--cached)
 
 #### commit 취소하고 unstaged구역에 선택한 HEAD부터 현재 작업내역 저장
 
