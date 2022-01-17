@@ -57,8 +57,8 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 
 #### 원격 저장소에 작업 파일 저장
 
-- git push (-f) <remote> <branch>
-<br><br>
+- git push (-f) <주소> <브랜치>
+
 
 ---
 
@@ -87,7 +87,7 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 #### oldest-commit부터 lastest-commit까지의 모든 커밋을 현재 브랜치에 복사
 
 - git cherry-pick oldest-commit^..latest-commit
-<br><br>
+
 
 ---
 
@@ -110,7 +110,7 @@ How to settings git, init, cloning, add, commit, remove, branch, reset, and upda
 #### 클라우드의 내용 가져오고 병합(fetch+merge)
 
 - git pull <주소> <브랜치>
-  <br><br>
+
 
 ---
 
