@@ -1,140 +1,149 @@
 # git-test
 
 How to settings git, init, cloning, add, commit, remove, branch, reset, and update sub branch from master branch
-<br>
 
 ---
 
 ## Setting git
-
-- git config --global user.name "아이디"
-- git config --global user.email "이메일"
-  <br><br>
+```
+git config --global user.name "아이디"
+git config --global user.email "이메일"
+```
 
 ---
 
 ## Initiation
 
 #### 원격 저장소 클론 로컬로 복사
-
-- git clone <주소> (폴더 이름)
-
+```
+git clone <:path>
+```
 #### 프로젝트 폴더 git 등록
-
-- git init
-
+```
+git init
+```
 #### git 원격 저장소 목록
-
-- git remote -v
-
+```
+git remote -v
+```
 #### git 원격 저장소 추가
-
-- git remote add origin <주소>
-- git remote add <이름> <주소>
-
+```
+git remote add <remote:name> <:path>
+```
 #### git 원격 저장소 URL 변경
-
-- git remote set-url <이름> <주소>
-
+```
+git remote set-url <remote:name> <:path>
+```
 #### git 원격 저장소 삭제
-
-- git remote remove <이름>
-
+```
+git remote remove <remote:name>
+```
 #### unstage 파일 stage 변경
-
-- git add <파일>
-
+```
+git add <file>
+```
 #### stage 파일 unstage 변경
-
-- git reset HEAD <파일>
-
+```
+git reset HEAD <file>
+```
 #### stage 파일 commit
-
-- git commit -m "메세지"
-
+```
+git commit -m "message"
+```
 #### 마지막 commit 내용 변경
-- git commit --amend "메세지" (or --no-edit)
-
+```
+git commit --amend "message" (option: --no-edit)
+```
 #### 원격 저장소에 작업 파일 저장
-
-- git push (-f) <주소> <브랜치>
-
+```
+git push (-f) <remote:path|name> <branch:name>
+```
 
 ---
 
 ## Branch
 
 #### 브랜치 보기
-
-- git branch
-
+```
+git branch
+```
 #### 브랜치 생성
-
-- git branch <이름>
-
+```
+git branch <branch:name>
+```
 #### 브랜치 삭제
-
-- git branch -d <브랜치>
-
+```
+git branch -d <branch:name>
+```
 #### 브랜치 이동
-
-- git checkout <브랜치>
-
+```
+git checkout <branch:name>
+```
 #### 브랜치 생성&이동
-
-- git checkout -b <브랜치>
-
+```
+git checkout -b <branch:name>
+```
 #### oldest-commit부터 lastest-commit까지의 모든 커밋을 현재 브랜치에 복사
-
-- git cherry-pick oldest-commit^..latest-commit
-
+```
+git cherry-pick oldest-commit^..latest-commit
+```
 
 ---
 
 ## Merge(update) Branch
 
 #### 현재 브랜치에 다른 브랜치의 수정사항 병합(commit 기록 병합)
-
-- git merge <브랜치><br>
-  (merge후에 push 필수)
-
+```
+git merge <branch:name>
+(merge후에 push 필수)
+```
 #### 현재 브랜치에 다른 브랜치의 수정사항 병합(commit 기록 병합x)
-
-- git rebase <브랜치><br>
-  (rebase후에 commit지점 Applying 하고 merge 수행)
-
+```
+git rebase <branch:name>
+(rebase후에 commit지점 Applying 하고 merge 수행)
+```
 #### 클라우드에서 git프로젝트의 현 상태 확인
-
-- git fetch <주소> <브랜치>
-
+```
+git fetch <remote:path|name> <branch:name>
+```
 #### 클라우드의 내용 가져오고 병합(fetch+merge)
-
-- git pull <주소> <브랜치>
-
+```
+git pull <remote:path|name> <branch:name>
+```
 
 ---
 
 ## Remove or Cancle
 
 #### git init 해제
-
-- rm -r .git
-
+```
+rm -r .git
+```
 #### git 원격 저장소 삭제
-
-- git remote remove <이름>
-
+```
+git remote remove <remote:name>
+```
 #### commit 취소하고 unstaged구역에 선택한 HEAD부터 현재 작업내역 저장
-
-- git reset HEAD^
-
+```
+git reset HEAD^
+```
 #### commit 취소하고 staged구역에 선택한 HEAD부터 현재 작업내역 저장
-
-- git reset --soft HEAD^
-
+```
+git reset --soft HEAD^
+```
 #### commit 취소하고 선택한 HEAD까지 변경사항도 삭제
+```
+git reset --hard HEAD^
+```
 
-- git reset --hard HEAD^
+---
+
+## Fetch .gitignore
+```
+git rm -r --cached .
+git add .
+git commit -m "적용할 커밋 메시지"
+```
 
 <br>
 
